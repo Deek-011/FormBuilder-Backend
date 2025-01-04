@@ -14,6 +14,12 @@ const Form = require("./schema/formSchema");
 dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
+app.use(cors(
+  {
+    origin: ["https://form-builder-backend-nu.vercel.app"],
+    methods: ["POST", "GET"],
+    credentials:true
+  }
 
 // Middleware
 app.use(cors());
